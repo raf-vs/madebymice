@@ -48,11 +48,8 @@ gulp.task('styles', function(){
 
 gulp.task('scripts', function(){
   return gulp.src([
-                  'src/assets/javascript/vendor/_jquery.fancybox.js',
-                  'src/assets/javascript/vendor/_ziehharmonika.js',
-                  'src/assets/javascript/vendor/_jpages.js',
-                  'src/assets/javascript/vendor/_responsive-nav.js',                  
-                  'src/assets/javascript/main.js'
+                  'src/assets/javascript/plugins/*.js',
+                  'src/assets/javascript/*.js'
                   ])
     .pipe(plumber({
       errorHandler: function (error) {
@@ -60,6 +57,7 @@ gulp.task('scripts', function(){
         this.emit('end');
     }}))
     .pipe(concat('scripts.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('themes/madebymice/static/assets/javascript/'))
     .pipe(browserSync.reload({stream:true}))
 });
@@ -79,7 +77,7 @@ gulp.task('extras', () => {
     '!src/includes'
   ], {
     dot: true
-  }).pipe(gulp.dest('static'));
+  }).pipe(gulp.dest('themes/madebymice/static/'));
 });
 
 gulp.task('build', ['images','styles','scripts','extras', 'translate'], () => {
@@ -87,6 +85,7 @@ gulp.task('build', ['images','styles','scripts','extras', 'translate'], () => {
 });
 
 gulp.task('default', ['browser-sync'], function(){
+  gulp.watch("src/**/*", ['extras']);
   gulp.watch("src/assets/styles/**/*.scss", ['styles']);
   gulp.watch("src/assets/javascript/**/*.js", ['scripts']);
   gulp.watch("src/admin/*.yml", ['admin']);

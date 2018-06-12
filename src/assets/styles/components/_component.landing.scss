@@ -2,8 +2,14 @@
 * @Author: Raf Van Suetendael
 * @Date:   10-06-2018 22:17:12
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 11-06-2018 08:32:05
+* @Last Modified time: 11-06-2018 22:00:59
 */
+#scene {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+}
 .c-landing {
 	width: 100vw;
 	height: 100vh;
@@ -29,15 +35,15 @@
 			width: 48vw;
 			left: -50vw;
 		}
-		&::before {
-			display:block;
-			content: "";
-			border-right: 1px solid #fff;
-			position: absolute;
-			top: 0;
-			height: 100%;
-			left: -2vw;
-		}
+		// &::before {
+		// 	display:block;
+		// 	content: "";
+		// 	border-right: 1px solid #fff;
+		// 	position: absolute;
+		// 	top: 0;
+		// 	height: 100%;
+		// 	left: -2vw;
+		// }
 		span {
 			font-family: "bungee outline", sans-serif;
 		}
