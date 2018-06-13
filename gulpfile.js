@@ -81,7 +81,7 @@ gulp.task('extras', () => {
 });
 
 gulp.task('build', ['images','styles','scripts','extras'], () => {
-  return gulp.src('static/**/*');
+  return gulp.src('themes/madebymice/static/**/*');
 });
 
 gulp.task('default', ['browser-sync'], function(){
