@@ -2,55 +2,38 @@
 * @Author: Raf Van Suetendael
 * @Date:   10-06-2018 22:17:12
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 11-06-2018 22:00:59
+* @Last Modified time: 13-06-2018 00:05:27
 */
-#scene {
-	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
-	position: relative;
-}
 .c-landing {
 	width: 100vw;
 	height: 100vh;
-	background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+	overflow: hidden;
+	z-index: 10;
 	.c-landing__title {
 		color: #fff;
 		display: block;
 		position: absolute;
-		left: 50vw;
-		top: 50vh;
+		z-index: 10;
+		left: 45vw;
+		top: 40vh;
 		transform: translateY(-50%);
+		
 		h1 {
 			margin: 0;
 			line-height: .8em;
-			font-size: 8rem;	
-		}
-		&::after {
-			display:block;
-			content: "";
-			border-bottom: 1px solid #fff;
-			position: absolute;
-			top: 6.4rem;
-			width: 48vw;
-			left: -50vw;
-		}
-		// &::before {
-		// 	display:block;
-		// 	content: "";
-		// 	border-right: 1px solid #fff;
-		// 	position: absolute;
-		// 	top: 0;
-		// 	height: 100%;
-		// 	left: -2vw;
-		// }
-		span {
-			font-family: "bungee outline", sans-serif;
+			font-size: 8rem;
+			text-shadow: 0px 5px 50px rgba(0,0,0,.5);
 		}
 		p {
-			// font-family: "bungee hairline", sans-serif;
+			
+		}
+		.baseline {
 			font-weight: 300;
 			margin: 0;
+			top: auto !important;
+			bottom: -3em;
+			left: auto !important;
+			right: 0px;
 		}
 	}
 }

@@ -17,8 +17,13 @@
 html {
   font-size: ($inuit-global-font-size / 16px) * 1em; /* [1] */
   line-height: $inuit-global-line-height / $inuit-global-font-size; /* [1] */
-  overflow-y: scroll; /* [2] */
+  // overflow-y: scroll; /* [2] */
   min-height: 100%; /* [3] */
-  font-family: 'Sunflower', sans-serif;
+  font-family: 'Source sans pro', sans-serif;
   font-weight: 300;
+  overflow: hidden;
+}
+
+#main {
+	z-index: 2;
 }

@@ -57,7 +57,7 @@ gulp.task('scripts', function(){
         this.emit('end');
     }}))
     .pipe(concat('scripts.js'))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest('themes/madebymice/static/assets/javascript/'))
     .pipe(browserSync.reload({stream:true}))
 });
@@ -80,7 +80,7 @@ gulp.task('extras', () => {
   }).pipe(gulp.dest('themes/madebymice/static/'));
 });
 
-gulp.task('build', ['images','styles','scripts','extras', 'translate'], () => {
+gulp.task('build', ['images','styles','scripts','extras'], () => {
   return gulp.src('static/**/*');
 });
 
@@ -89,7 +89,4 @@ gulp.task('default', ['browser-sync'], function(){
   gulp.watch("src/assets/styles/**/*.scss", ['styles']);
   gulp.watch("src/assets/javascript/**/*.js", ['scripts']);
   gulp.watch("src/admin/*.yml", ['admin']);
-  gulp.watch("cms/**/*.md", ['translate']);
-  gulp.watch("cms/**/*.yml", ['translate']);
-  // gulp.watch("*.html", ['bs-reload']);
 });
