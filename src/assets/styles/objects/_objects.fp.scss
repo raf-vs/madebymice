@@ -1,0 +1,32 @@
+/*
+* @Author: Raf Van Suetendael
+* @Date:   15-06-2018 00:03:28
+* @Last Modified by:   Raf Van Suetendael
+* @Last Modified time: 15-06-2018 00:22:58
+*/
+#fp-nav {
+    position: absolute;
+    right: 0;
+    top: 50vh;
+    z-index: 200;
+    /* transform: translateY(-50%); */
+    ul {
+    	list-style: none;
+    	margin: 0;
+    	padding: 0;
+    }
+    a {
+    	width: 10px;
+    	height: 10px;
+    	display: block;
+    	background: #fff;
+    	border-radius: 50%;
+    	margin: 10px;
+    	transition: all .3s ease;
+    	&.active {
+		    width: 5px;
+		    height: 5px;
+		    margin-left: 12px;
+		}
+    }
+}

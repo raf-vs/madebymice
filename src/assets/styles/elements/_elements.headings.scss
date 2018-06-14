@@ -26,7 +26,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-  @include inuit-font-size($inuit-font-size-h1);
+  font-size: calc(24px + (85 - 24)*(100vw - 400px)/(1200 - 400));
+  // @include inuit-font-size($inuit-font-size-h1);
 }
 
 h2 {
