@@ -2,7 +2,7 @@
 * @Author: Raf Van Suetendael
 * @Date:   10-06-2018 22:17:12
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 15-06-2018 00:38:05
+* @Last Modified time: 15-06-2018 00:45:52
 */
 .c-landing {
 	width: 100vw;
@@ -21,7 +21,7 @@
 		h1 {
 			margin: 0;
 			line-height: .8em;
-			font-size: calc(36px + (110 - 36)*(100vw - 400px)/(1200 - 400));
+			font-size: calc(50px + (110 - 50)*(100vw - 400px)/(1200 - 400));
 			text-shadow: 0px 5px 50px rgba(0,0,0,.5);
 			&:before {
 			content: attr(data-before);
