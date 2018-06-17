@@ -2,7 +2,7 @@
 * @Author: Raf Van Suetendael
 * @Date:   08-06-2018 08:10:16
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 15-06-2018 00:05:00
+* @Last Modified time: 17-06-2018 23:17:55
 */
 /* ==========================================================================
    INUITCSS
@@ -107,6 +107,7 @@ $inuit-global-line-height: 32px;
 @import "node_modules/inuitcss/generic/generic.reset";
 @import "node_modules/inuitcss/generic/generic.shared";
 @import "generic/generic.animate";
+@import "generic/generic.slick";
 
 
 
@@ -116,6 +117,7 @@ $inuit-global-line-height: 32px;
 @import "elements/elements.page";
 @import "elements/elements.headings";
 @import "elements/elements.images";
+@import "elements/elements.section";
 @import "node_modules/inuitcss/elements/elements.tables";
 
 
@@ -139,6 +141,7 @@ $inuit-global-line-height: 32px;
 // @import "node_modules/inuitcss/objects/objects.pack";
 @import "objects/objects.particles";
 @import "objects/objects.fp";
+@import "objects/objects.bg-pattern";
 
 
 
@@ -148,6 +151,7 @@ $inuit-global-line-height: 32px;
 //
 // Build and include your project’s UI components here.
 @import "components/component.landing";
+@import "components/component.proj";
 
 
 

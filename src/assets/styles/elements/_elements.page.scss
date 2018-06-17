@@ -22,8 +22,30 @@ html {
   font-family: 'Source sans pro', sans-serif;
   font-weight: 300;
   overflow: hidden;
+  color: #475F77;
+}
+
+a {
+  color: #475F77;
+  transition: all .5s ease;
+  text-decoration: none;
+  svg {
+    transition: all .5s ease;
+  }
+  &:hover {
+    transform: scale(1.2);
+    color: #354B5E;
+    svg {
+      
+      transform: scale(1.5);
+    }
+  }
 }
 
 #main {
-	z-index: 2;
+	z-index: 10;
+}
+
+.svg-inline--fa {
+  margin-right: 10px;
 }

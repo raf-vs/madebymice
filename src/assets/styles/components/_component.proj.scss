@@ -1,0 +1,93 @@
+/*
+* @Author: Raf Van Suetendael
+* @Date:   15-06-2018 22:07:17
+* @Last Modified by:   Raf Van Suetendael
+* @Last Modified time: 17-06-2018 23:38:47
+*/
+section {
+	
+}
+.c-proj {
+	
+}
+.c-proj__skills {
+	transition: all .5s ease;
+	position: absolute;
+	z-index:200;
+	left: calc(36px + (510 - 36)*(100vw - 400px)/(1200 - 400)) !important;
+	display: none;
+	.c-proj__tag {
+		background: #354B5E;
+		padding: 5px 10px;
+		border-radius: $global-radius;
+		color: #fff;
+	}
+}
+
+.c-proj__slider {
+	position: relative;
+	top: 50vh;
+	left: 20px;
+	transform: translateY(-50%);
+	max-width: 50vw;
+	height: 65vh;
+	width: calc(36px + (510 - 36)*(100vw - 400px)/(1200 - 400)) !important;
+	box-shadow: 0 0 100px rgba(53, 75, 94, 0.25);
+	@include mq(mobile, tablet) {
+		top: 20px;
+		left: 20px;
+		transform: none;
+		width: calc(100vw - 40px) !important;
+		max-width: 100vw;
+		height: 50vh;
+	}
+}
+
+.c-proj__img {
+	position: relative;
+	height: 65vh;
+	width: 100%;
+	transition: background-position 1.5s ease-out 0.5s;
+	background-position: top center;
+	background-size: 100% auto!important;
+	background-repeat: no-repeat;
+	border-radius: $global-radius;
+	&:hover {
+		background-position: bottom center!important;
+		transition: background-position 5s linear 0s;
+	}
+}
+
+.slick-list {
+	height: 65vh;
+	@include mq(mobile, tablet) {
+		height: 50vh;
+	}
+}
+
+.slick-dots {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-top: 1em;
+	li {
+		display:inline-block;
+		&.slick-active {
+			a {
+				width: 5px;
+		    	height: 5px;
+		    	margin-bottom: 12px;
+			}
+
+		}
+	}
+    a {
+    	width: 10px;
+    	height: 10px;
+    	display: block;
+    	background: #fff;
+    	border-radius: 50%;
+    	margin: 10px;
+    	transition: all .3s ease;
+    }
+}
