@@ -5507,7 +5507,7 @@ window.particlesJS.load = function(tag_id, path_config_json, callback){
 * @Author: Raf Van Suetendael
 * @Date:   11-06-2018 20:46:19
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 18-06-2018 00:38:35
+* @Last Modified time: 18-06-2018 08:22:45
 */
 // particlesJS.load('particles-js', 'assets/javascript/particles.json', function() {
 //   console.log('callback - particles.js config loaded');
@@ -5632,7 +5632,10 @@ $(document).ready(function(){
       afterRender: function(){
         var $el = $('#main-title');
         var titleBottom = $el.position().top + $el.offset().top + $el.outerHeight(true);
-        $(this).find('.js-reposition').css('top', titleBottom + 10).fadeIn(1000)
+        $(this).find('.js-reposition').css('top', titleBottom + 10).fadeIn(1000);
+        setTimeout(function() {
+          $('body').removeClass('loading');
+        },500);
       }
   	});
 

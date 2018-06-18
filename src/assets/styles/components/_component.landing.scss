@@ -2,8 +2,14 @@
 * @Author: Raf Van Suetendael
 * @Date:   10-06-2018 22:17:12
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 17-06-2018 23:31:44
+* @Last Modified time: 18-06-2018 08:12:01
 */
+.loading {
+	background-image: linear-gradient(-225deg, #2CD8D5 0%, #6B8DD6 48%, #8E37D7 100%);
+	.c-landing {
+		opacity: 0;
+	}
+}
 .c-landing {
 	width: 100vw;
 	height: 100vh;

@@ -2,9 +2,14 @@
 * @Author: Raf Van Suetendael
 * @Date:   17-06-2018 23:14:51
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 18-06-2018 00:32:07
+* @Last Modified time: 18-06-2018 08:24:37
 */
+.loading .o-pattern {
+	opacity: 0;
+}
 .o-pattern {
+	transition: all .5s ease;
+	opacity: 1;
 	overflow: hidden;
 }
 .o-bg-pattern--left {

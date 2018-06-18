@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="/assets/styles/main.css">
 </head>
 
-<body>
+<body class="loading">
 {{- partial "header.html" . -}}
 
 <div class="c-landing">
@@ -36,12 +36,12 @@
 	{{- end -}}
 	</div>
 	<div id="particles-js" class="o-particles"></div>
-	<div class="o-pattern">
-		<div class="o-bg-pattern--left"></div>
-		<div class="o-bg-pattern--right"></div>
-	</div>
 </div>
 
+<div class="o-pattern">
+	<div class="o-bg-pattern--left"></div>
+	<div class="o-bg-pattern--right"></div>
+</div>
 
 {{- partial "footer.html" . -}}
 
