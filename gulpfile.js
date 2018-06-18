@@ -28,7 +28,7 @@ gulp.task('bs-reload', function () {
 gulp.task('images', function(){
   gulp.src('src/assets/images/**/*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('themes/madebymice/static/assets/images/'));
+    .pipe(gulp.dest('static/assets/images/'));
 });
 
 gulp.task('styles', function(){

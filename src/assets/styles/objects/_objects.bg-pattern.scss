@@ -2,13 +2,10 @@
 * @Author: Raf Van Suetendael
 * @Date:   17-06-2018 23:14:51
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 18-06-2018 08:24:37
+* @Last Modified time: 18-06-2018 23:39:36
 */
-.loading .o-pattern {
-	opacity: 0;
-}
 .o-pattern {
-	transition: all .5s ease;
+	transition: all .5s ease-out;
 	opacity: 1;
 	overflow: hidden;
 }
@@ -21,8 +18,8 @@
 	height: 100vh;
 	transform: rotate(0deg) skewX(-30deg);
 	overflow: hidden;
+	transition: all .6s ease-out;
 	&:after {
-		transition: all .5s ease;
 		background-image: linear-gradient(-225deg, #2CD8D5 0%, #6B8DD6 48%, #8E37D7 100%);
 		content: "";
 		display: block;
@@ -40,8 +37,9 @@
 	height: 100vh;
 	transform: rotate(0deg) skewX(45deg);
 	overflow:hidden;
+	transition: all .6s ease-out;
+	transition-delay: .2s;
 	&:after {
-		transition: all .5s ease;
 		background-image: linear-gradient(-225deg, #2CD8D5 0%, #6B8DD6 48%, #8E37D7 100%);
 		content: "";
 		display: block;
@@ -53,6 +51,11 @@
 	}
 }
 
+.is-switching .o-bg-pattern--left,
+.is-switching .o-bg-pattern--right {
+	left: -110vw;
+}
+
 .bg-2 .o-bg-pattern--left:after,
 .bg-2 .o-bg-pattern--right:after {
 	background-image: linear-gradient(-225deg, #88d3ce 0%, #6e45e2 100%);
@@ -60,4 +63,16 @@
 .bg-3 .o-bg-pattern--left:after,
 .bg-3 .o-bg-pattern--right:after {
 	background-image: linear-gradient(-225deg, #209cff 0%, #68e0cf 100%);
+}
+.bg-4 .o-bg-pattern--left:after,
+.bg-4 .o-bg-pattern--right:after {
+	background-image:: linear-gradient(30deg, #00CDAC, #02AAB0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.bg-5 .o-bg-pattern--left:after,
+.bg-5 .o-bg-pattern--right:after {
+	background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+.bg-6 .o-bg-pattern--left:after,
+.bg-6 .o-bg-pattern--right:after {
+	background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
 }

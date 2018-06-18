@@ -2,8 +2,46 @@
 * @Author: Raf Van Suetendael
 * @Date:   11-06-2018 20:46:19
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 18-06-2018 11:26:55
+* @Last Modified time: 18-06-2018 23:37:09
 */
+var width = 100,
+    perfData = window.performance.timing, // The PerformanceTiming interface represents timing-related performance information for the given page.
+    EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart),
+    time = parseInt((EstimatedTime/1000)%60)*100;
+
+// Loadbar Animation
+$(".loadbar").animate({width: width + "%"}, time);
+
+// Percentage Increment Animation
+var PercentageID = $("#precent"),
+    start = 0,
+    end = 100,
+    durataion = time;
+    animateValue(PercentageID, start, end, durataion);
+    
+function animateValue(id, start, end, duration) {
+  
+  var range = end - start,
+      current = start,
+      increment = end > start? 1 : -1,
+      stepTime = Math.abs(Math.floor(duration / range)),
+      obj = $(id);
+    
+  var timer = setInterval(function() {
+    current += increment;
+    $(obj).text(current + "%");
+      //obj.innerHTML = current;
+    if (current == end) {
+      clearInterval(timer);
+    }
+  }, stepTime);
+}
+
+// Fading Out Loadbar on Finised
+setTimeout(function(){
+  $('.js-preloader').fadeOut(300);
+}, time);
+
 particlesJS.load('particles-js', 'assets/javascript/particles.json', function() {
   console.log('callback - particles.js config loaded');
 });
@@ -12,11 +50,6 @@ var title = document.getElementById('title');
 var parallax = new Parallax(title, {
 	onReady: console.log('ready')
 });
-
-// var scene = document.getElementById('scene');
-// var parallaxInstance = new Parallax(scene, {
-//   relativeInput: true
-// });
 
 var dictionary = "azertyuiopqsdfghjklmwxcvbn".split('');
 
@@ -111,25 +144,27 @@ $(document).ready(function(){
   	$('#main').fullpage({
       navigation: true,
       navigationPosition: 'right',
-      anchors: ['Home', 'one', 'two', 'three', 'four'],
+      // anchors: ['Home', 'one', 'two', 'three', 'four'],
   		onLeave: function(index, nextIndex, direction){
         var title = $('#main .section').eq(nextIndex - 1).attr("data-title");
   			txtScramble(title);
-        $('.o-pattern').fadeOut().removeClass(removeColorClasses);
+        $('body').addClass('is-switching');
         $(this).find('.js-reposition').fadeOut();
   		},
       afterLoad: function(anchorLink, index){
         var $el = $('#main-title');
         var titleBottom = $el.position().top + $el.offset().top + $el.outerHeight(true);
         $(this).find('.js-reposition').css('top', titleBottom + 10).fadeIn(1000);
-        $('.o-pattern').addClass('bg-' + index).fadeIn();
+        $('.o-pattern').removeClass(removeColorClasses);
+        $('.o-pattern').addClass('bg-' + index);
+        $('body').removeClass('is-switching');
       },
       afterRender: function(){
         var $el = $('#main-title');
         var titleBottom = $el.position().top + $el.offset().top + $el.outerHeight(true);
         $(this).find('.js-reposition').css('top', titleBottom + 10).fadeIn(1000);
         setTimeout(function() {
-          $('body').removeClass('loading');
+          $('.js-preloader').fadeOut();
         },500);
       }
   	});
@@ -140,8 +175,8 @@ $(document).ready(function(){
       fade: true,
       customPaging : function(slider, i) {
         return '<a></a>';
-      },
-      appendDots: '.js-projectslider'
+      }
+      // appendDots: $(this)
     });
 
     var $carousel = $('.js-projectslider');

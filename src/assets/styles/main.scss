@@ -2,7 +2,7 @@
 * @Author: Raf Van Suetendael
 * @Date:   08-06-2018 08:10:16
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 17-06-2018 23:17:55
+* @Last Modified time: 18-06-2018 22:13:07
 */
 /* ==========================================================================
    INUITCSS
@@ -139,6 +139,7 @@ $inuit-global-line-height: 32px;
 // @import "node_modules/inuitcss/objects/objects.crop";
 // @import "node_modules/inuitcss/objects/objects.table";
 // @import "node_modules/inuitcss/objects/objects.pack";
+@import "objects/objects.preloader";
 @import "objects/objects.particles";
 @import "objects/objects.fp";
 @import "objects/objects.bg-pattern";
