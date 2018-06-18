@@ -2,11 +2,11 @@
 * @Author: Raf Van Suetendael
 * @Date:   11-06-2018 20:46:19
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 18-06-2018 08:22:45
+* @Last Modified time: 18-06-2018 11:26:55
 */
-// particlesJS.load('particles-js', 'assets/javascript/particles.json', function() {
-//   console.log('callback - particles.js config loaded');
-// });
+particlesJS.load('particles-js', 'assets/javascript/particles.json', function() {
+  console.log('callback - particles.js config loaded');
+});
 
 var title = document.getElementById('title');
 var parallax = new Parallax(title, {
