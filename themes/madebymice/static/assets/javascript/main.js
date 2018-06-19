@@ -2,7 +2,7 @@
 * @Author: Raf Van Suetendael
 * @Date:   11-06-2018 20:46:19
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 18-06-2018 23:37:09
+* @Last Modified time: 19-06-2018 00:05:46
 */
 var width = 100,
     perfData = window.performance.timing, // The PerformanceTiming interface represents timing-related performance information for the given page.
@@ -144,7 +144,7 @@ $(document).ready(function(){
   	$('#main').fullpage({
       navigation: true,
       navigationPosition: 'right',
-      // anchors: ['Home', 'one', 'two', 'three', 'four'],
+      anchors: ['Home', 'one', 'two', 'three', 'four', 'five', 'six', 'seven'],
   		onLeave: function(index, nextIndex, direction){
         var title = $('#main .section').eq(nextIndex - 1).attr("data-title");
   			txtScramble(title);
