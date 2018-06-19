@@ -2,7 +2,7 @@
 * @Author: Raf Van Suetendael
 * @Date:   17-06-2018 23:14:51
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 18-06-2018 23:39:36
+* @Last Modified time: 20-06-2018 00:07:00
 */
 .o-pattern {
 	transition: all .5s ease-out;
@@ -26,6 +26,9 @@
 		width: 100%;
 		height: 100%;
 	}
+	@include mq(mobile, tablet) {
+		left: -60vw;
+	}
 }
 
 .o-bg-pattern--right {
@@ -47,13 +50,16 @@
 		height: 100%;
 	}
 	@include mq(mobile, tablet) {
-		left: -100vw;
+		left: -120vw;
 	}
 }
 
 .is-switching .o-bg-pattern--left,
 .is-switching .o-bg-pattern--right {
 	left: -110vw;
+	@include mq(mobile, tablet) {
+		left: -180vw;
+	}
 }
 
 .bg-2 .o-bg-pattern--left:after,
@@ -75,4 +81,8 @@
 .bg-6 .o-bg-pattern--left:after,
 .bg-6 .o-bg-pattern--right:after {
 	background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
+}
+.bg-7 .o-bg-pattern--left:after,
+.bg-7 .o-bg-pattern--right:after {
+	background-image: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%);
 }

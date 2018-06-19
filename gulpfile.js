@@ -27,7 +27,7 @@ gulp.task('bs-reload', function () {
 
 gulp.task('images', function(){
   gulp.src('src/assets/images/**/*')
-    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+    .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
     .pipe(gulp.dest('static/assets/images/'));
 });
 
@@ -85,7 +85,7 @@ gulp.task('build', ['images','styles','scripts','extras'], () => {
 });
 
 gulp.task('default', ['browser-sync'], function(){
-  gulp.watch("src/**/*", ['extras']);
+  gulp.watch("src/**/*", ['extras','images']);
   gulp.watch("src/assets/styles/**/*.scss", ['styles']);
   gulp.watch("src/assets/javascript/**/*.js", ['scripts']);
   gulp.watch("src/admin/*.yml", ['admin']);

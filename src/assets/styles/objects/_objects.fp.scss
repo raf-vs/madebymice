@@ -2,7 +2,7 @@
 * @Author: Raf Van Suetendael
 * @Date:   15-06-2018 00:03:28
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 17-06-2018 23:08:04
+* @Last Modified time: 19-06-2018 23:45:37
 */
 
 /*!
@@ -214,7 +214,8 @@ html.fp-enabled,
     z-index: 200;
     /* transform: translateY(-50%); */
     @include mq(mobile, tablet) {
-        top: 75vh;
+        top: auto;
+        bottom: 0;
     }
     ul {
     	list-style: none;

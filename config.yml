@@ -1,8 +1,8 @@
 baseURL: //www.madebymice.com/
 languageCode: en-us
-title: Made by Mice - The portfolio of Raf Van Suetendael
+title: Portfolio of Raf Van Suetendael
 params:
   author: Raf Van Suetendael
-  description: Web- / Graphic- and interactive design made by mice.
+  description: Web- / Graphic- and interactive design by Raf Van Suetendael.
 
 theme: madebymice
