@@ -2,7 +2,7 @@
 * @Author: Raf Van Suetendael
 * @Date:   15-06-2018 22:07:17
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 20-06-2018 00:04:54
+* @Last Modified time: 20-06-2018 22:08:30
 */
 section {
 	
@@ -10,14 +10,24 @@ section {
 .c-proj {
 	
 }
-.c-proj__skills {
+.c-proj__content {
 	transition: all .5s ease;
 	position: absolute;
 	z-index:200;
 	left: calc(36px + (510 - 36)*(100vw - 400px)/(1200 - 400));
 	max-width: 30em;
+	padding: .6rem 1rem;
+	background: rgba(255,255,255,1);
+	box-shadow: 0 0 100px rgba(53, 75, 94, 0.25);
+	border-radius: $global-radius;
 	@include mq(mobile, tablet) {
-		left: 30vw;
+		left: 10px;
+		width: calc(100vw - 20px);
+		max-width: 30em;
+	}
+	&.is-atbottom {
+	    bottom: 10px;
+	    top: auto !important;
 	}
 	.c-proj__tag {
 		background: #354B5E;

@@ -2,7 +2,7 @@
 * @Author: Raf Van Suetendael
 * @Date:   17-06-2018 23:14:51
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 20-06-2018 00:07:00
+* @Last Modified time: 20-06-2018 22:16:44
 */
 .o-pattern {
 	transition: all .5s ease-out;
@@ -27,7 +27,9 @@
 		height: 100%;
 	}
 	@include mq(mobile, tablet) {
-		left: -60vw;
+		left: -25vw;
+		transform: rotate(45deg) skewX(0deg);
+		top: -250px;
 	}
 }
 
@@ -50,7 +52,9 @@
 		height: 100%;
 	}
 	@include mq(mobile, tablet) {
-		left: -120vw;
+		left: -74vw;
+    	transform: rotate(-30deg) skewX(0deg);
+    	top: 18vh;
 	}
 }
 

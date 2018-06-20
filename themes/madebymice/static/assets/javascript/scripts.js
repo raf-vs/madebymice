@@ -5523,7 +5523,7 @@ window.particlesJS.load = function(tag_id, path_config_json, callback){
 * @Author: Raf Van Suetendael
 * @Date:   11-06-2018 20:46:19
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 20-06-2018 08:24:25
+* @Last Modified time: 20-06-2018 21:50:19
 */
 var width = 100,
     perfData = window.performance.timing,
@@ -5605,18 +5605,10 @@ var txtScramble = function(str) {
 
 $(document).ready(function(){
 
-    var messages = ["made by mice", "Show and tell ...", "A selection of ...", "Discover ...", "Come get some ...", "Tasty ...", "Sweet ..."],
+    var messages = ["made by mice", "Show and tell ...", "A selection of ...", "Discover ...", "Come get some ...", "Tasty ...", "Sweet ...", "Great ...", "Smart ..."],
     message = messages[Math.floor(Math.random() * messages.length)];
 
     $('#main .section').eq(0).attr("data-title", message);
-
-    function changemessage() {
-      // Do stuff every 2000 miliseconds
-      $('#main .section').eq(0).attr("data-title", message);
-      txtScramble(title);
-      $('#main .section').find('.js-reposition').css('top', titleBottom + 10 );
-    }
-    setInterval(changemessage, 2000);
 
     var $el = $('#main-title');
     var titleBottom = $el.position().top + $el.offset().top + $el.outerHeight(true);
@@ -5644,8 +5636,14 @@ $(document).ready(function(){
     $(window).resize(function () {
         waitForFinalEvent(function(){
           var $el = $('#main-title');
+          var $reposEl = $('#main .section.active').find('.js-reposition');
           var titleBottom = $el.position().top + $el.offset().top + $el.outerHeight(true);
           $('#main .section.active').find('.js-reposition').css('top', titleBottom + 10 );
+          if (($reposEl.offset().top + $reposEl.height()) >= $(window).height()) {
+            $reposEl.addClass('is-atbottom');
+          } else {
+            $reposEl.removeClass('is-atbottom');
+          }
         }, 800, "reposition-skills");
     });
 
@@ -5672,26 +5670,36 @@ $(document).ready(function(){
       continuousVertical: true,
       navigation: true,
       navigationPosition: 'right',
-      anchors: ['Home', 'one', 'two', 'three', 'four', 'five', 'six', 'seven'],
-      navigationTooltips: ['First', 'Second', 'Third'],
+      anchors: ['Home', 'one', 'two', 'three', 'four', 'five', 'skills', 'seven'],
   		onLeave: function(index, nextIndex, direction){
+        var $reposEl = $(this).find('.js-reposition');
         var title = $('#main .section').eq(nextIndex - 1).attr("data-title");
   			txtScramble(title);
+
         $('body').addClass('is-switching');
-        $(this).find('.js-reposition').fadeOut();
+
+        $reposEl.removeClass('is-atbottom');
+
   		},
       afterLoad: function(anchorLink, index){
         var $el = $('#main-title');
+        var $reposEl = $(this).find('.js-reposition');
         var titleBottom = $el.position().top + $el.offset().top + $el.outerHeight(true);
-        $(this).find('.js-reposition').css('top', titleBottom + 10).fadeIn(1000);
+        $reposEl.css('top', titleBottom + 10);
         $('.o-pattern').removeClass(removeColorClasses);
         $('.o-pattern').addClass('bg-' + index);
         $('body').removeClass('is-switching');
+        if (($reposEl.offset().top + $reposEl.height()) >= $(window).height()) {
+          $reposEl.addClass('is-atbottom');
+        } else {
+          $reposEl.removeClass('is-atbottom');
+        }
       },
       afterRender: function(){
         var $el = $('#main-title');
+        var $reposEl = $(this).find('.js-reposition');
         var titleBottom = $el.position().top + $el.offset().top + $el.outerHeight(true);
-        $(this).find('.js-reposition').css('top', titleBottom + 10).fadeIn(1000);
+        $reposEl.css('top', titleBottom + 10);
         setTimeout(function() {
           $('.js-preloader').fadeOut();
         },500);
