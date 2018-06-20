@@ -2,7 +2,7 @@
 * @Author: Raf Van Suetendael
 * @Date:   11-06-2018 20:46:19
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 20-06-2018 01:21:00
+* @Last Modified time: 20-06-2018 08:34:55
 */
 var width = 100,
     perfData = window.performance.timing,
@@ -84,7 +84,7 @@ var txtScramble = function(str) {
 
 $(document).ready(function(){
 
-    var messages = ["made by mice", "Show and tell ...", "A selection of ...", "Discover ...", "Come get some ...", "Tasty ...", "Sweet ..."],
+    var messages = ["made by mice", "Show and tell ...", "A selection of ...", "Discover ...", "Come get some ...", "Tasty ...", "Sweet ...", "Great ...", "Smart ..."],
     message = messages[Math.floor(Math.random() * messages.length)];
 
     $('#main .section').eq(0).attr("data-title", message);

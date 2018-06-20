@@ -5523,7 +5523,7 @@ window.particlesJS.load = function(tag_id, path_config_json, callback){
 * @Author: Raf Van Suetendael
 * @Date:   11-06-2018 20:46:19
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 20-06-2018 01:12:28
+* @Last Modified time: 20-06-2018 08:24:25
 */
 var width = 100,
     perfData = window.performance.timing,
@@ -5610,6 +5610,14 @@ $(document).ready(function(){
 
     $('#main .section').eq(0).attr("data-title", message);
 
+    function changemessage() {
+      // Do stuff every 2000 miliseconds
+      $('#main .section').eq(0).attr("data-title", message);
+      txtScramble(title);
+      $('#main .section').find('.js-reposition').css('top', titleBottom + 10 );
+    }
+    setInterval(changemessage, 2000);
+
     var $el = $('#main-title');
     var titleBottom = $el.position().top + $el.offset().top + $el.outerHeight(true);
     $('#main .section').find('.js-reposition').css('top', titleBottom + 10 );
@@ -5660,7 +5668,7 @@ $(document).ready(function(){
     }
 
   	$('#main').fullpage({
-      scrollOverflow: true,
+      // scrollOverflow: true,
       continuousVertical: true,
       navigation: true,
       navigationPosition: 'right',
