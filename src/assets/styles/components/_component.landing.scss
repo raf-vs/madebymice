@@ -2,7 +2,7 @@
 * @Author: Raf Van Suetendael
 * @Date:   10-06-2018 22:17:12
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 20-06-2018 22:10:25
+* @Last Modified time: 20-06-2018 23:16:17
 */
 
 .c-landing {
@@ -20,7 +20,7 @@
 		transform: translateY(-50%) !important;
 		@include mq(mobile, tablet) {
 			top: 55vh;
-			left: 10px;
+			left: 30px;
 		}
 		h1 {
 			margin: 0;

@@ -2,13 +2,22 @@
 * @Author: Raf Van Suetendael
 * @Date:   15-06-2018 22:07:17
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 20-06-2018 22:08:30
+* @Last Modified time: 20-06-2018 23:42:02
 */
-section {
-	
-}
-.c-proj {
-	
+.js-btn {
+	span {
+		transition: all .3s ease-out;
+		font-size: 0;
+		line-height: 0;
+		opacity: 0;
+	}
+	&:hover {
+		span {
+			font-size: 1rem;
+			line-height: 1rem;
+			opacity: 1;
+		}
+	}
 }
 .c-proj__content {
 	transition: all .5s ease;
