@@ -5523,7 +5523,7 @@ window.particlesJS.load = function(tag_id, path_config_json, callback){
 * @Author: Raf Van Suetendael
 * @Date:   11-06-2018 20:46:19
 * @Last Modified by:   Raf Van Suetendael
-* @Last Modified time: 20-06-2018 21:50:19
+* @Last Modified time: 21-06-2018 21:55:00
 */
 var width = 100,
     perfData = window.performance.timing,
@@ -5670,7 +5670,7 @@ $(document).ready(function(){
       continuousVertical: true,
       navigation: true,
       navigationPosition: 'right',
-      anchors: ['Home', 'one', 'two', 'three', 'four', 'five', 'skills', 'seven'],
+      anchors: ['Home', 'one', 'two', 'three', 'four', 'five', 'six', 'skills'],
   		onLeave: function(index, nextIndex, direction){
         var $reposEl = $(this).find('.js-reposition');
         var title = $('#main .section').eq(nextIndex - 1).attr("data-title");
