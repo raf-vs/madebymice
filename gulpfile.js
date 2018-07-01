@@ -88,5 +88,4 @@ gulp.task('default', ['browser-sync'], function(){
   gulp.watch("src/**/*", ['extras','images']);
   gulp.watch("src/assets/styles/**/*.scss", ['styles']);
   gulp.watch("src/assets/javascript/**/*.js", ['scripts']);
-  gulp.watch("src/admin/*.yml", ['admin']);
 });
