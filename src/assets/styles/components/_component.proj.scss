@@ -1,0 +1,124 @@
+/*
+* @Author: Raf Van Suetendael
+* @Date:   15-06-2018 22:07:17
+* @Last Modified by:   Raf Van Suetendael
+* @Last Modified time: 20-06-2018 23:42:02
+*/
+.js-btn {
+	span {
+		transition: all .3s ease-out;
+		font-size: 0;
+		line-height: 0;
+		opacity: 0;
+	}
+	&:hover {
+		span {
+			font-size: 1rem;
+			line-height: 1rem;
+			opacity: 1;
+		}
+	}
+}
+.c-proj__content {
+	transition: all .5s ease;
+	position: absolute;
+	z-index:200;
+	left: calc(36px + (510 - 36)*(100vw - 400px)/(1200 - 400));
+	max-width: 30em;
+	padding: .6rem 1rem;
+	background: rgba(255,255,255,1);
+	box-shadow: 0 0 100px rgba(53, 75, 94, 0.25);
+	border-radius: $global-radius;
+	@include mq(mobile, tablet) {
+		left: 10px;
+		width: calc(100vw - 20px);
+		max-width: 30em;
+	}
+	&.is-atbottom {
+	    bottom: 10px;
+	    top: auto !important;
+	}
+	.c-proj__tag {
+		background: #354B5E;
+		padding: 8px 10px;
+		border-radius: $global-radius;
+		color: #fff;
+		white-space: nowrap;
+		margin-bottom: .5em;
+		display: inline-block;
+		line-height: 1em;
+	}
+}
+
+.c-proj__slider {
+	transition: left .6s ease-out;
+	transition-delay: 1s; 
+	position: relative;
+	top: 52vh;
+	left: -50vw;
+	transform: translateY(-50%);
+	max-width: 50vw;
+	width: calc(36px + (510 - 36)*(100vw - 400px)/(1200 - 400)) !important;
+	@include mq(mobile, tablet) {
+		top: 5vh;
+		left: 20px;
+		transform: none;
+		width: calc(100vw - 40px) !important;
+		max-width: 100vw;
+	}
+}
+
+.active .c-proj__slider {
+	left: 20px;
+}
+
+.c-proj__img {
+	position: relative;
+	// height: 65vh;
+	padding-top: 56.25%;
+	width: 100%;
+	transition: background-position 2.5s ease-out 0.5s;
+	background-position: top center;
+	background-size: 100% auto!important;
+	background-repeat: no-repeat;
+	border-radius: $global-radius;
+	box-shadow: 0 0 100px rgba(53, 75, 94, 0.25);
+	&:hover {
+		background-position: bottom center!important;
+		transition: background-position 10s linear 0s;
+	}
+}
+
+.slick-list {
+	// height: 65vh;
+	overflow: visible;
+	@include mq(mobile, tablet) {
+	}
+}
+
+.slick-dots {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-top: 1em;
+	li {
+		display:inline-block;
+		&.slick-active {
+			a {
+				width: 5px;
+		    	height: 5px;
+		    	margin-bottom: 12px;
+			}
+
+		}
+	}
+    a {
+    	width: 10px;
+    	height: 10px;
+    	display: block;
+    	background: #fff;
+    	border-radius: 50%;
+    	margin: 10px;
+    	transition: all .3s ease;
+    }
+}
